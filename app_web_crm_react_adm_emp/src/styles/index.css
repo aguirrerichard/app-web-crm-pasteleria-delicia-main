@@ -129,3 +129,4 @@ button, input { font: inherit; color: inherit; }
 .linea-tiempo { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .linea-tiempo li { display: flex; flex-direction: column; border-left: 3px solid var(--rosa); padding-left: 12px; }
 .linea-tiempo span { font-size: 14px; color: var(--cacao-2); }
+.producto-foto { width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0; display: block; }

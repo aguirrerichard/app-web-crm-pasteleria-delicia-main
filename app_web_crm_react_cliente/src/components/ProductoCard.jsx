@@ -7,10 +7,12 @@ const TONOS = ['#6B3E2E', '#F3E1C7', '#3B2320', '#F6C744'];
 export default function ProductoCard({ producto, indice }) {
   return (
     <article className="tarjeta producto">
-      <div className="producto-ilustracion" style={{ '--tono': TONOS[indice % TONOS.length] }} aria-hidden="true">
-        <span className="capa capa-1" />
-        <span className="capa capa-2" />
-      </div>
+         {producto.imagen
+     ? <img className="producto-foto" src={producto.imagen} alt={producto.nombre} />
+     : <div className="producto-ilustracion" style={{ '--tono': TONOS[indice % TONOS.length] }} aria-hidden="true">
+         <span className="capa capa-1" />
+         <span className="capa capa-2" />
+       </div>}
       <div className="producto-cuerpo">
         <h2>{producto.nombre}</h2>
         <p>{producto.descripcion}</p>
