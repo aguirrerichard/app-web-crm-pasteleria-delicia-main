@@ -1,0 +1,16 @@
+# Dependencias y compilados
+node_modules/
+dist/
+
+# Secretos: NUNCA se suben
+.env
+.env.local
+.env.*.local
+
+# Si se sube la plantilla
+!.env.example
+
+# Basura del sistema y del editor
+.DS_Store
+Thumbs.db
+*.log

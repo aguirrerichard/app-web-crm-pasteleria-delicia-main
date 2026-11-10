@@ -1,0 +1,104 @@
+/* Pastelería Delicia · tienda del cliente */
+:root {
+  --crema: #FFF8F1; --blanco: #FFFFFF; --cacao: #3B2320; --cacao-2: #6E5149;
+  --rosa: #E26D8A; --rosa-oscuro: #B8445F; --rosa-suave: #FCE4EA;
+  --menta: #2F8F6B; --menta-suave: #DDF3EA; --linea: #EADBD0;
+  --error: #B42318; --error-suave: #FDE8E7;
+  --sombra: 0 1px 2px rgba(59, 35, 32, .06), 0 10px 30px rgba(59, 35, 32, .07);
+  --f-titulo: 'Fraunces', Georgia, serif;
+  --f-texto: 'Nunito', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--crema); color: var(--cacao); font-family: var(--f-texto); font-size: 16px; line-height: 1.5; }
+h1, h2 { font-family: var(--f-titulo); margin: 0; line-height: 1.15; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--rosa); outline-offset: 2px; }
+
+/* Cabecera */
+.cabecera { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px clamp(16px, 4vw, 48px); background: var(--blanco); border-bottom: 1px solid var(--linea); position: sticky; top: 0; z-index: 5; }
+.marca { display: flex; align-items: center; gap: 10px; font-family: var(--f-titulo); font-size: 20px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.marca-icono { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--rosa); color: #fff; font-size: 18px; }
+.menu { display: flex; gap: 6px; }
+.menu a { text-decoration: none; font-weight: 700; padding: 8px 14px; border-radius: 999px; color: var(--cacao-2); white-space: nowrap; }
+.menu a.active { background: var(--rosa-suave); color: var(--rosa-oscuro); }
+
+.contenedor { max-width: 1040px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 32px) 48px; display: flex; flex-direction: column; gap: 22px; }
+.pie { text-align: center; color: var(--cacao-2); font-size: 13px; padding: 24px; }
+
+/* Piezas comunes */
+.tarjeta { background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; box-shadow: var(--sombra); }
+.boton { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 0; border-radius: 12px; padding: 11px 20px; min-height: 44px; background: var(--rosa); color: #fff; font-weight: 800; text-decoration: none; cursor: pointer; }
+.boton:hover { background: var(--rosa-oscuro); }
+.boton:disabled { opacity: .6; cursor: wait; }
+.boton.ancho { width: 100%; }
+.aviso { padding: 12px 16px; border-radius: 12px; background: var(--blanco); border: 1px solid var(--linea); margin: 0; }
+.aviso.error { background: var(--error-suave); border-color: transparent; color: var(--error); font-weight: 700; }
+.etiqueta { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--rosa-oscuro); }
+.nota { color: var(--cacao-2); font-size: 14px; }
+.precio { font-family: var(--f-titulo); font-size: 22px; margin: 0; }
+
+/* Catálogo */
+.portada { padding: 8px 0; }
+.portada h1 { font-size: clamp(28px, 4.5vw, 42px); max-width: 18ch; }
+.portada p { color: var(--cacao-2); max-width: 52ch; margin: 10px 0 0; }
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.producto { overflow: hidden; display: flex; flex-direction: column; }
+.producto-ilustracion { height: 150px; background: var(--rosa-suave); display: grid; place-items: end center; padding-bottom: 22px; }
+.capa { display: block; border-radius: 10px 10px 6px 6px; background: var(--tono); box-shadow: inset 0 -6px 0 rgba(0,0,0,.08); }
+.capa-1 { width: 74px; height: 30px; grid-area: 1 / 1; margin-bottom: 34px; }
+.capa-2 { width: 116px; height: 38px; grid-area: 1 / 1; }
+.producto-cuerpo { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.producto-cuerpo h2 { font-size: 19px; }
+.producto-cuerpo p { margin: 0; color: var(--cacao-2); font-size: 14px; flex: 1; }
+.producto-pie { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+
+/* Formularios */
+.formulario { padding: 24px; max-width: 640px; width: 100%; }
+.formulario h1 { font-size: 28px; margin: 6px 0 2px; }
+.formulario form { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; }
+.formulario label { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px; flex: 1; }
+.formulario input { border: 1px solid var(--linea); border-radius: 12px; padding: 11px 13px; min-height: 44px; background: var(--crema); font-weight: 400; }
+.formulario small { color: var(--cacao-2); font-weight: 400; align-self: flex-end; }
+.fila { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+.formulario form.busqueda { flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.formulario form.busqueda label { min-width: 160px; }
+.volver { font-size: 14px; font-weight: 700; color: var(--cacao-2); text-decoration: none; }
+.total { margin: 4px 0 0; font-size: 18px; }
+
+/* Confirmación */
+.confirmacion { padding: 32px; text-align: center; max-width: 520px; width: 100%; align-self: center; }
+.confirmacion h1 { font-size: 22px; margin-top: 8px; }
+.codigo { font-family: var(--f-titulo); font-size: 48px; font-weight: 700; color: var(--rosa-oscuro); margin: 4px 0 10px; letter-spacing: .02em; }
+.confirmacion p { margin: 4px 0; }
+.confirmacion .boton { margin-top: 16px; }
+
+/* Seguimiento */
+.seguimiento { padding: 24px; }
+.seguimiento-cabecera { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.seguimiento-cabecera h2 { font-size: 22px; margin: 4px 0; }
+.seguimiento-cabecera p { margin: 2px 0; }
+.en-vivo { font-size: 12px; font-weight: 800; color: var(--menta); background: var(--menta-suave); border-radius: 999px; padding: 4px 10px; height: fit-content; }
+.estados { list-style: none; margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.estados li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; position: relative; color: var(--cacao-2); }
+.estados li::before { content: ''; position: absolute; top: 19px; left: -50%; width: 100%; height: 3px; background: var(--linea); z-index: 0; }
+.estados li:first-child::before { display: none; }
+.estados li.hecho::before, .estados li.actual::before { background: var(--menta); }
+.punto { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--blanco); border: 3px solid var(--linea); font-weight: 800; position: relative; z-index: 1; }
+.estados li.hecho .punto { background: var(--menta); border-color: var(--menta); color: #fff; }
+.estados li.actual .punto { border-color: var(--rosa); color: var(--rosa-oscuro); box-shadow: 0 0 0 6px var(--rosa-suave); }
+.estados li.actual { color: var(--cacao); }
+.estados b { font-size: 14px; }
+.estados small { font-size: 12px; }
+
+@media (max-width: 560px) {
+  .cabecera { padding: 12px 14px; gap: 8px; }
+  .menu { gap: 2px; }
+  .menu a { padding: 7px 9px; font-size: 13px; }
+  .marca { font-size: 15px; gap: 8px; }
+  .marca-icono { width: 30px; height: 30px; font-size: 15px; }
+  .estados { grid-template-columns: 1fr; }
+  .estados li { flex-direction: row; text-align: left; gap: 12px; }
+  .estados li::before { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
