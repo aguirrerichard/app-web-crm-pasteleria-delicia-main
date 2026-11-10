@@ -1,3 +1,13 @@
+## 🌐 Enlaces en producción
+
+| Parte | Enlace |
+|---|---|
+| Cliente (catálogo y pedidos) | https://delicia-cliente.vercel.app |
+| Admin y empleado | https://delicia-admin-pied.vercel.app |
+| API | https://delicia-api.vercel.app/api/productos |
+
+Usuarios de prueba: `admin@delicia.pe` y `rosa@delicia.pe` (contraseña `123456`).
+
 # Pastelería Delicia · CRM web (demo de clase)
 
 Trazabilidad del pedido: el cliente encarga una torta, el empleado avanza su estado y el administrador ve el historial.
